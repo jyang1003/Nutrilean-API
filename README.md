@@ -9,30 +9,30 @@ APP NAME allows you to keep track of your nutrition to meet your health goals. T
 
 # Login Page
 The page where the user will sign in or sign up
-![Login](Wireframe/sign-in.png)
+![Login](Wireframes/sign-in.png)
 
 
 # Profile Creation
 Upon first login, the user will be prompted to enter information about themselves and answer a few short questions to better guage their goals and needs. 
 
-![Profile Creation](Wireframe/profile-create.png)
+![Profile Creation](Wireframes/profile-create.png)
 
 # Home Page
 After the user creates their profile, they will now see the home page that displays their user info, caloric goals, and amount needed to reach that goal.
 
-![Home](Wireframe/home-page.png)
+![Home](Wireframes/home-page.png)
 
 
 # Week At a Glance
 The week at a glance page will have a visual display using bar graphs to display the user's nutritional and macronutritional intake througout the week.
 
-![Week At a Glance](Wireframe/week.png)
+![Week At a Glance](Wireframes/week.png)
 
 
 # My Day
 The my day page will be where the user inputs their nutritional intake. The amount will be reflected on the home page. 
 
-![My Day](Wireframe/my-day.png)
+![My Day](Wireframes/my-day.png)
 
 ## Tech Stack
 This app was created with the MERN stack. MERN stands for MongoDB, Express, React, and Node. 
