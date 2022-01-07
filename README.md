@@ -9,6 +9,7 @@ APP NAME allows you to keep track of your nutrition to meet your health goals. T
 
 # Login Page
 The page where the user will sign in or sign up
+
 ![Login](Wireframes/sign-in.png)
 
 
