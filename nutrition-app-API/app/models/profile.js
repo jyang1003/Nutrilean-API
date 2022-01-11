@@ -3,7 +3,7 @@ const User = require('./user')
 
 const nutritionSchema = new mongoose.Schema({
     calories: {
-        type: Number,
+        type: Number
     },
     protein: {
         type: Number
@@ -13,6 +13,10 @@ const nutritionSchema = new mongoose.Schema({
     },
     fats: {
         type: Number
+    },
+    date: {
+        type: Date,
+        required: false
     }
 })
 
@@ -53,7 +57,7 @@ const profileSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
-    nutrition: nutritionSchema,
+    nutrition: [nutritionSchema],
     owner: {
         // this links the user Id
         type: mongoose.Schema.Types.ObjectId,
@@ -62,3 +66,4 @@ const profileSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Profile', profileSchema)
+

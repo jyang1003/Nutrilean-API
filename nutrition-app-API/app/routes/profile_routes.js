@@ -33,7 +33,13 @@ router.get('/profiles', (req, res, next) => {
         // .then((profiles) => res.status(200).json({ profiles: profiles }))
         .catch(next)
 })
-
+// GET Profile for single user
+router.get('/profile/:ownerId', (req, res, next)=>{
+    Profile.findOne({owner: req.params.ownerId})
+    .then(handle404)
+    .then(showProfile => res.status(200).json(showProfile))
+    .catch(next)
+})
 // POST - create a profile document
 router.post('/profiles', (req, res, next) => {
     Profile.create(req.body.profile)
@@ -41,18 +47,6 @@ router.post('/profiles', (req, res, next) => {
             // console.log('createdProfile', createdProfile)
             res.status(201).json({ profile: createdProfile.toObject() })
         })
-        .catch(next)
-})
-
-// GET - show profile belonging to user
-router.get('/profiles/:ownerId', (req,res,next) => {
-    Profile.find({owner: req.params.ownerId})
-        .then(handle404)
-        // .then(showProfile => {
-        //     requireOwnership(req, showProfile)
-        //     return showProfile
-        // })
-        .then(showProfile => res.status(200).json(showProfile))
         .catch(next)
 })
 
