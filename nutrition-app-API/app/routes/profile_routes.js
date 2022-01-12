@@ -42,7 +42,8 @@ router.get('/profile/:ownerId', (req, res, next)=>{
 })
 // POST - create a profile document
 router.post('/profiles', (req, res, next) => {
-    Profile.create(req.body.profile)
+    console.log('this is req',req)
+    Profile.create(req.body)
         .then(createdProfile => {
             // console.log('createdProfile', createdProfile)
             res.status(201).json({ profile: createdProfile.toObject() })

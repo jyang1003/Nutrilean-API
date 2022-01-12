@@ -37,34 +37,17 @@ router.get('/intake/:profileId', (req, res, next) => {
 //route to post
 router.post('/intake/:profileId', (req, res, next) => {
     console.log('req params profileId', req.params.profileId)
+    console.log('req.body', req.body)
     // console.log('this is req', req)
     Profile.findById(req.params.profileId)
         .then(profile => {
-            console.log('this is profile', req.body.nutrition)
-            profile.nutrition.push(req.body.nutrition)
+            console.log('this is profile', req.body)
+            profile.nutrition.push(req.body)
             return profile.save()
-            // Profile.findOneAndUpdate({_id: req.params.profileId}, 
-            //     {nutrition: req.body.nutrition}, 
-            //     {new: true, upsert: true})
-            //     .then((doc) => {
-            //         console.log('this is doc', doc)
-            //     })
         })
         .then(nutrition => res.status(201).json({ nutrition: nutrition.toObject()}))
         .catch(next)
 })
-//route to patch calories, carbs, fats, or protein
-// router.patch('/intake/:profileId/:intakeId', removeBlanks, (req, res, next) => {
-//     Profile.findById(req.params.profileId)
-//         .then(handle404)
-//         .then(profile => {
-//             profile.nutrition.filter()
-//             console.log('profile', req.body.nutrition)
-//             profile.updateOne(req.body.nutrition)
-//         })
-//         .then(() => res.sendStatus(204))
-//         .catch(next)
-// })
 router.patch('/intake/:profileId/:intakeId', requireToken, removeBlanks, (req, res, next) => {
     Profile.findByIdAndUpdate(req.params.profileId)
         .then(handle404)

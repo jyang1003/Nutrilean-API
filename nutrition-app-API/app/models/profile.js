@@ -37,6 +37,9 @@ const profileSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
+    sex: {
+        type: String
+    },
     baseCaloricMaintenence: {
         type: Number,
         required: false
@@ -56,6 +59,13 @@ const profileSchema = new mongoose.Schema({
     fatsGoal: {
         type: Number,
         required: false
+    },
+    activityLevel: {
+        type: Number,
+        required: false
+    },
+    goal: {
+        type: Number,
     },
     nutrition: [nutritionSchema],
     owner: {
