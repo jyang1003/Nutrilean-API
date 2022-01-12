@@ -15,7 +15,7 @@ const nutritionSchema = new mongoose.Schema({
         type: Number
     },
     date: {
-        type: Date,
+        type: String,
         required: false
     }
 })
