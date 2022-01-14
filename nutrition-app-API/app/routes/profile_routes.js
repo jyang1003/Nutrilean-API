@@ -42,7 +42,7 @@ router.get('/profile/:ownerId', (req, res, next)=>{
 })
 // POST - create a profile document
 router.post('/profiles', (req, res, next) => {
-    console.log('this is req',req)
+    // console.log('this is req',req)
     Profile.create(req.body)
         .then(createdProfile => {
             // console.log('createdProfile', createdProfile)
@@ -56,7 +56,7 @@ router.patch('/profiles/:id', removeBlanks, requireToken, (req, res, next) => {
     // res.json({message: 'Update a profile document'})
     //  ADD SOON
     // delete req.body.profile.owner 
-    // console.log('req.body', req.body)
+    console.log('req.body', req.body)
     Profile.findById(req.params.id)
         .then(handle404)
         .then(profile => {
