@@ -29,8 +29,12 @@ const clientDevPort = 3000
 // establish database connection
 // use new version of URL parser
 // use createIndex instead of deprecated ensureIndex
-mongoose.connect(db, {
+mongoose.connect(process.env.MONGODB_URI || db, {
 	useNewUrlParser: true,
+})
+
+mongoose.connection.once('open', () => {
+	console.log(`connected to mongodb at ${mongoose.connection.host}:${mongoose.connection.port}`)
 })
 
 // instantiate express application object
@@ -74,6 +78,7 @@ app.use(nutritionRoutes)
 // note that this comes after the route middlewares, because it needs to be
 // passed any error messages from them
 app.use(errorHandler)
+
 
 // run API on designated port (4741 in this case)
 app.listen(port, () => {
