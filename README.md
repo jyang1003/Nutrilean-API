@@ -1,5 +1,5 @@
-# Nutrition App
-APP NAME allows you to keep track of your nutrition to meet your health goals. The app will have a home page that displays the user's info and goals, a week by a glance that provides a visual display of the users nutritional intake throughout the week, and a 
+# Nutrilean
+Nutrilean allows you to keep track of your nutrition to meet your health goals. The app will have a home page that displays the user's info and goals, a week by a glance that provides a visual display of the users nutritional intake throughout the week, and a 
 
 ## User Stories
 - AAU I want to be told a number to reach for caloric and macronutritional goals
